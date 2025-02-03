@@ -26,6 +26,9 @@ public class MoneyBook {
     @Enumerated(EnumType.STRING)
     private PlusMinus plusOrMinus; // 입금 출금
 
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
     private Integer price; // 가격
 
     private LocalDate historyDate; // 사용 날짜
