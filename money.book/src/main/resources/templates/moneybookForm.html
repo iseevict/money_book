@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가계부 입력 폼</title>
+</head>
+<body>
+<h1>가계부 입력</h1>
+
+<form th:action="@{/v1/money_book/datas}" method="post">
+    <!-- 1) content: 가계부 내용 -->
+    <div>
+        <label for="content">가계부 내용:</label>
+        <input type="text" id="content" name="content" required>
+    </div>
+
+    <!-- 2) plusOrMinus: PLUS(입금) or MINUS(출금) -->
+    <div>
+        <label for="plusOrMinus">입/출금:</label>
+        <select id="plusOrMinus" name="plusOrMinus" required>
+            <option value="PLUS">입금(PLUS)</option>
+            <option value="MINUS">출금(MINUS)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="price">금액:</label>
+        <input type="number" id="price" name="price" min="0" required>
+    </div>
+
+    <!-- 3) category -->
+    <div>
+        <label for="category">카테고리:</label>
+        <select id="category" name="category" required>
+            <option value="TRANSPORT">교통비</option>
+            <option value="CONVENIENCE">편의점</option>
+            <option value="RESTAURANT">식당</option>
+            <option value="CIGARETTE">담배</option>
+            <option value="KARAOKE">노래방</option>
+            <option value="GIFT">선물</option>
+            <option value="DELIVERY">배달</option>
+            <option value="COUPANG">쿠팡</option>
+            <option value="CAFE">카페</option>
+            <option value="ETC">기타</option>
+        </select>
+    </div>
+
+    <!-- 4) historyDate: 사용 날짜 -->
+    <div>
+        <label for="historyDate">사용 날짜:</label>
+        <input type="date" id="historyDate" name="historyDate" required>
+    </div>
+
+    <br>
+    <button type="submit">등록</button>
+</form>
+
+</body>
+</html>

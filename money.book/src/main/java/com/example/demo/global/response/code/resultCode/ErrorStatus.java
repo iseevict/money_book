@@ -11,6 +11,9 @@ import org.springframework.http.HttpStatus;
 public enum ErrorStatus implements BaseErrorCode {
     // Global
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "GLOBAL401", "서버 오류"),
+
+    // MonthUse
+    NOT_EXIST_MONTH_USE(HttpStatus.INTERNAL_SERVER_ERROR, "MONTHUSE401", "해당 달에 대한 데이터가 생성되지 않았습니다."),
     ;
 
     private final HttpStatus httpStatus;

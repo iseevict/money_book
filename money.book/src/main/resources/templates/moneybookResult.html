@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>가계부 작성 결과</title>
+    <style>
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>가계부 작성 결과</h1>
+
+<!-- "data"는 컨트롤러의 model.addAttribute("data", response)와 매핑됨 -->
+<p>내용: <span th:text="${data.content}"></span></p>
+<p>금액: <span th:text="${data.price}"></span></p>
+<p>입출금: <span th:text="${data.plusOrMinus}"></span></p>
+<p>카테고리: <span th:text="${data.category}"></span></p>
+<p>사용 날짜: <span th:text="${data.historyDate}"></span></p>
+<p>생성 일시: <span th:text="${data.createdAt}"></span></p>
+
+<button type="button"
+        onclick="location.href='/moneybook/form'">
+    홈으로
+</button>
+
+</body>
+</html>

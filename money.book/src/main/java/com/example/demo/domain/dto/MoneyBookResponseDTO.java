@@ -24,8 +24,8 @@ public class MoneyBookResponseDTO {
         private Category category;
         private Integer categoryNum;
         private Integer dayUse;
-        private Integer monthUse;
-        private Integer totalUse;
+        private Integer year;
+        private Integer month;
         private LocalDate historyDate;
         private LocalDateTime createdAt;
     }
