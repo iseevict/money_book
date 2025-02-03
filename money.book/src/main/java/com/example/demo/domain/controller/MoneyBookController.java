@@ -47,29 +47,29 @@ public class MoneyBookController {
         model.addAttribute("data", response);
         return "moneybookResult";
     }
-
-    /**
-     * 타깃 데이터 수정 API
-     */
-
     /**
      * 타깃 월 사용한 금액 내역 API
      */
+    // SELECT id, content, category, plus_or_minus, history_date, year, month FROM money_book WHERE month = mm AND year = yyyy ORDER BY history_date ASC;
 
     /**
      * 타깃 년도에 사용한 금액 내역 API
      */
+    // SELECT id, content, category, plus_or_minus, history_date, year, month FROM money_book WHERE year = yyyy ORDER BY year ASC, history_date ASC;
 
     /**
      * 타깃 일에 사용한 금액 내역 API
      */
+    // SELECT id, content, category, plus_or_minus, history_date, year, month FROM money_book WHERE history_date = 'yyyy/mm/dd' ORDER BY year ASC;
 
     /**
-     * 전체 내역 API
+     * 타깃 일에 사용한 금액
      */
-    /*@GetMapping("/datas")
-    public String getAllDataList() {
+    // SELECT SUM( CASE WHEN plus_or_minus = 'PLUS' THEN price ELSE price * -1 END ) AS total_price FROM money_book WHERE history_date = 'yyyy/mm/dd';
 
-    }*/
+    /**
+     * 전체 내역 API (월별 오름차순 / 년도별)
+     */
+    // SELECT id, content, category, plus_or_minus, history_date, year, month FROM money_book ORDER BY year ASC, history_date ASC;
 
 }
